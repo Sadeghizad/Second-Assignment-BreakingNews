@@ -22,7 +22,7 @@ public class Infrastructure {
     public Infrastructure(String APIKEY, String query) {
         this.APIKEY = APIKEY;
         this.URL = "https://newsapi.org/v2/everything?q=" + query +
-                "&from=" + LocalDate.now().minusDays(1) + "&sortBy=publishedAt&apiKey=";
+                "&from=" + LocalDate.now().minusDays(2) + "&sortBy=publishedAt&apiKey=";
         this.JSONRESULT = getInformation();
         this.newsList = new ArrayList<>(); // initialize clearly!
         parseInformation();
@@ -33,7 +33,6 @@ public class Infrastructure {
     private String getInformation() {
         try {
             HttpClient client = HttpClient.newHttpClient();
-            System.out.println(URL + APIKEY);
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(URL + APIKEY))
                     .build();
