@@ -1,17 +1,41 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
-group = 'AP'
-version = '1.0-SNAPSHOT'
+group 'AP'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation 'org.openjfx:javafx-controls:21'
+    implementation 'org.openjfx:javafx-fxml:21'
+}
+
+javafx {
+    version = '21'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+application {
+    mainClass = 'AP.Main'
+}
+
+// Ensures runtime arguments include JavaFX modules clearly:
+tasks.withType(JavaExec).configureEach {
+    jvmArgs = [
+            '--module-path', 'C:\\javafx-sdk-21\\lib',
+            '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}
+
+repositories {
+    mavenCentral()
 }
 
 test {

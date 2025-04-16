@@ -1,62 +1,92 @@
-# Project Title
+# Breaking News - Java API Project
 
-Simple overview of use/purpose.
+A simple Java application that fetches real-time news from NewsAPI.org and presents the latest headlines. This project integrates API requests, JSON parsing, and a JavaFX-based GUI.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+This project is designed as a news aggregator that retrieves news articles from an external API and presents them in an interactive GUI. The application allows users to search for news articles, view article details, and open them in a web browser. Additionally, it incorporates object-oriented programming (OOP) principles and error handling mechanisms to ensure robustness.
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Java 21 or later
+* Gradle
+* Gson (for JSON parsing)
+* JavaFX (for GUI implementation)
+* NewsAPI.org API key
+* Windows 10/11 (Recommended)
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sadeghizad/BreakingNews.git
+   cd BreakingNews
+   ```
+2. Create a new branch for development:
+   ```bash
+   git checkout -b development
+   ```
+3. Ensure Gradle and Java are installed:
+   ```bash
+   java -version
+   gradle -v
+   ```
+4. Add your API key to the `Infrastructure` class:
+   ```java
+   private static final String API_KEY = "none-of-your-business-bro";
+   ```
 
-### Executing program
+### Executing Program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+1. Build the project using Gradle:
+   ```bash
+   gradle build
+   ```
+2. Run the application:
+   ```bash
+   gradle run
+   ```
+3. If running via IntelliJ IDEA:
+  * Open `Run/Debug Configurations`
+  * Set VM options:
+    ```
+    --module-path "C:\javafx-sdk-21\lib" --add-modules javafx.controls,javafx.fxml
+    ```
+  * Click **Run**
+
+## Features
+
+- **Search News**: Users can enter keywords to fetch related news.
+- **View Details**: Clicking a headline expands the news article details.
+- **Open in Browser**: Users can open the original article link.
+- **Error Handling**: Handles API errors and missing fields.
+- **JavaFX GUI**: Provides a clean and interactive user interface.
 
 ## Help
 
-Any advise for common problems or issues.
+If you encounter any issues, try:
+```bash
+gradle --stacktrace
 ```
-command to run if program contains helper info
-```
+Ensure you have set up JavaFX correctly.
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+- Your Name
+- Contact: [Sadeghziad](https://github.com/sadeghizad)
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+* 1.0 - Initial Release
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+- [NewsAPI.org](https://newsapi.org/) for providing free API access.
+- [Gson](https://github.com/google/gson) for JSON parsing.
+- [JavaFX Tutorials](https://www.youtube.com/c/BroCode) by BroCode.
